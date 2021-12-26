@@ -14,13 +14,13 @@ const formatsLogger = app.get('env') === 'development' ? 'dev' : 'short';
 app.use(logger(formatsLogger));
 app.use(cors());
 app.use(express.json());
-app.use(express.static(path.resolve('dist/appName')));
+app.use(express.static(path.resolve('appName')));
 app.use('/posts', postApi_1.default);
 app.use('/posts', likeApi_1.default);
 app.use('/posts/:id/comments', commentApi_1.default);
 app.use('/posts/:id/tags', tagApi_1.default);
 app.use('*', (req, res) => {
-    res.sendFile(path.resolve('dist/appName/index.html'));
+    res.sendFile(path.resolve('appName/index.html'));
 });
 app.use(errorMiddleware_1.default);
 exports.default = app;
