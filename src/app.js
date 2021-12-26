@@ -24,4 +24,3 @@ app.use('*', (req, res) => {
 });
 app.use(errorMiddleware_1.default);
 exports.default = app;
-console.log(123)
