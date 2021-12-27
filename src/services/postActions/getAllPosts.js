@@ -2,7 +2,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getAllPosts = void 0;
 const post_1 = require("../../db/schemas/post");
-const getAllPosts = (skip, limit, sortObj) => post_1.default.aggregate([
+const getAllPosts = (skip, limit, sortObj, filter) => post_1.default.aggregate([
+    { $match: filter },
     { $sort: sortObj },
     { $skip: skip },
     { $limit: limit },
@@ -28,14 +29,6 @@ const getAllPosts = (skip, limit, sortObj) => post_1.default.aggregate([
             localField: '_id',
             foreignField: 'postId',
             as: 'comments',
-        },
-    },
-    {
-        $lookup: {
-            from: 'tags',
-            localField: '_id',
-            foreignField: 'postId',
-            as: 'tags',
         },
     },
     {

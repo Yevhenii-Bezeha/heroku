@@ -5,7 +5,7 @@ const HttpException_1 = require("../../exceptions/HttpException");
 const createPost_1 = require("../../services/postActions/createPost");
 const create = async (req, res, next) => {
     var _a;
-    if (!req.body.title || !req.body.description) {
+    if (!req.body.title || !req.body.description || !req.body.tags) {
         next(new HttpException_1.default(404, 'Provide values'));
         return;
     }

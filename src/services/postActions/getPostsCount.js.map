@@ -1,1 +1,1 @@
-{"version":3,"file":"getPostsCount.js","sourceRoot":"","sources":["../../../../../backend/src/services/postActions/getPostsCount.ts"],"names":[],"mappings":";;;AAAA,gDAAyC;AAElC,MAAM,aAAa,GAAG,GAAG,EAAE,CAAC,cAAI,CAAC,cAAc,EAAE,CAAC;AAA5C,QAAA,aAAa,iBAA+B"}
+{"version":3,"file":"getPostsCount.js","sourceRoot":"","sources":["../../../../../backend/src/services/postActions/getPostsCount.ts"],"names":[],"mappings":";;;AAAA,gDAAyC;AAElC,MAAM,aAAa,GAAG,CAAC,MAAc,EAAE,EAAE,CAAC,cAAI,CAAC,cAAc,CAAC,MAAM,CAAC,CAAC;AAAhE,QAAA,aAAa,iBAAmD"}

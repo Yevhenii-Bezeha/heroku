@@ -15,7 +15,6 @@ const remove = async (req, res, next) => {
             return;
         }
         await (0, removePost_1.removeLikes)(postId);
-        await (0, removePost_1.removeTags)(postId);
         await (0, removePost_1.removeComments)(postId);
         res.json(new SuccessResponse_1.default(200, 'Success', result));
     }

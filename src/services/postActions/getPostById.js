@@ -32,14 +32,6 @@ const getPostById = (postId) => post_1.default.aggregate([
         },
     },
     {
-        $lookup: {
-            from: 'tags',
-            localField: '_id',
-            foreignField: 'postId',
-            as: 'tags',
-        },
-    },
-    {
         $project: {
             'user.password': 0,
             'likes.createdAt': 0,

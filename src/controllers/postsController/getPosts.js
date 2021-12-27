@@ -15,9 +15,17 @@ const get = async (req, res, next) => {
     const sortStr = sortBy.toString();
     const sortOrder = parseInt(order.toString());
     const sortObj = { [sortStr]: sortOrder };
+    //filter part
+    let { filter } = req.query;
+    if (filter) {
+        filter = { title: filter };
+    }
+    else {
+        filter = {};
+    }
     try {
-        const posts = await (0, getAllPosts_1.getAllPosts)(skip, limit, sortObj);
-        const totalCount = await (0, getPostsCount_1.getPostsCount)();
+        const posts = await (0, getAllPosts_1.getAllPosts)(skip, limit, sortObj, filter);
+        const totalCount = await (0, getPostsCount_1.getPostsCount)(filter);
         res.json(new SuccessResponse_1.default(200, 'Success', posts, totalCount));
     }
     catch (e) {

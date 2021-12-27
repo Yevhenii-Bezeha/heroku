@@ -6,7 +6,7 @@ const Schema = mongoose.Schema;
 const ObjectId = mongoose.Types.ObjectId;
 const tag = new Schema({
     text: {
-        type: String,
+        type: Array,
         enum: [...tagCategories_1.tagCategories],
         default: 'Reviews',
     },

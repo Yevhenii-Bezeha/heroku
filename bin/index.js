@@ -4,7 +4,7 @@ const app_1 = require("../src/app");
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 dotenv.config();
-const uri = process.env.MONGODB_URI;
+const uriDb = process.env['DB_HOST'] || 'error';
 const mongooseOptions = {
     promiseLibrary: global.Promise,
     useNewUrlParser: true,
@@ -12,7 +12,7 @@ const mongooseOptions = {
 };
 const connect = () => {
     mongoose
-        .connect(uri, mongooseOptions)
+        .connect(uriDb, mongooseOptions)
         .then(() => {
         const PORT = process.env['PORT'] || '3000';
         app_1.default.listen(PORT, () => console.log(`Server running on port: ${PORT}`));
